@@ -80,7 +80,6 @@ to_questions_block.click(function() {
 
     $(".slider").bxSlider({
         controls:false,
-        
         mode: 'fade',
         auto: true
        
