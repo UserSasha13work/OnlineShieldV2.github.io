@@ -5,17 +5,20 @@
 
 let first_block=$('.first_block'),
 questions_block=$('.questions_block'),
- to_questions_block=$('#to_questions_block'),
- to_final_block=$('.to_final_block'),
- final_block=$('.final_block'),
- coll_data_work=$('.coll_data_work'),
+to_questions_block=$('#to_questions_block'),
+to_final_block=$('.to_final_block'),
+final_block=$('.final_block'),
+coll_data_work=$('.coll_data_work'),
 coll_data_ready=$('.coll_data_ready'),
 to_final_lend=$('#to_final_lend'),
 line_mail_text=$('#line_mail_text'),
 coll_data_text1=$('#coll_data_text1'),
 coll_data_text2=$('#coll_data_text2'),
 coll_data_text3=$('#coll_data_text3'),
-coll_data_text4=$('#coll_data_text4');
+coll_data_text4=$('#coll_data_text4'),
+div_main=$('.div-main'),
+div_lend=$('.div_lend'),
+line_mail_text_lend=$('#line_mail_text_lend');
 
 
 to_questions_block.click(function() {
@@ -65,11 +68,26 @@ to_questions_block.click(function() {
     });
     clock.animate(100);
   }
+
+
   to_final_block.click(function() {
     to_final_fu();
-
   } );
+  to_final_lend.click(function() {
+    div_main.css('display', 'none');
+    div_lend.css('display', 'flex');
+    line_mail_text_lend.html(emailval);
 
+    $(".slider").bxSlider({
+        controls:false,
+        
+        mode: 'fade',
+        auto: true
+       
+    });
+
+  
+  } );
     
       $('.btn_m').click(function() {
 var modal = $(this).data('modal');
