@@ -11,7 +11,11 @@ questions_block=$('.questions_block'),
  coll_data_work=$('.coll_data_work'),
 coll_data_ready=$('.coll_data_ready'),
 to_final_lend=$('#to_final_lend'),
-line_mail_text=$('#line_mail_text');
+line_mail_text=$('#line_mail_text'),
+coll_data_text1=$('#coll_data_text1'),
+coll_data_text2=$('#coll_data_text2'),
+coll_data_text3=$('#coll_data_text3'),
+coll_data_text4=$('#coll_data_text4');
 
 
 to_questions_block.click(function() {
@@ -28,10 +32,23 @@ to_questions_block.click(function() {
        
       });
   } );
-  to_final_block.click(function() {
+
+  function to_final_fu(){
     questions_block.css('display', 'none');
     final_block.css('display', 'flex');
-    line_mail_text.html(emailval)
+    setTimeout(function() {
+        coll_data_text1.css('display', 'block');
+    }, 2000)
+    setTimeout(function() {
+        coll_data_text2.css('display', 'block');
+    }, 4000)
+    setTimeout(function() {
+        coll_data_text3.css('display', 'block');
+    }, 6000)
+    setTimeout(function() {
+        coll_data_text4.css('display', 'block');
+    }, 8000)
+    line_mail_text.html(emailval);
     setTimeout(ready_anim, 12000);
     const clock = radialIndicator("#indicatorContainerWrap", {
         radius: 70,
@@ -47,6 +64,9 @@ to_questions_block.click(function() {
     
     });
     clock.animate(100);
+  }
+  to_final_block.click(function() {
+    to_final_fu();
 
   } );
 
@@ -74,12 +94,19 @@ $('.modal').removeClass('active');
 
 let sub=$('#submit');
 let emailval;
+let vkl=0;
 // подписываюсь на ввод эл-ов
 $(document).ready(function(){
 $("#email").on('input', function(){
 enableSubmit(checkState());
 });
 });
+// $('#email').keyup(function(){
+//    if(vkl==1){
+//     to_final_fu();
+//    }
+   
+//   });
 
 // валидация
 function checkState(){
@@ -96,7 +123,14 @@ return re.test(String(string).toLowerCase());
 
 // включить/выключить кнопку "Отправить"
 function enableSubmit(state) {
-
+if(state==true){
+    vkl=1;
+    console.log(vkl);
+}
+else{
+    vkl=0;
+    console.log(vkl);
+}
 sub.prop("disabled", !state);
 }
 
@@ -104,5 +138,5 @@ function ready_anim() {
     coll_data_work.css('display','none');
     coll_data_ready.css('display','block');
     to_final_lend.css('display','flex');
-    }
+}
     
