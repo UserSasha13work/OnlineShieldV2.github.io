@@ -64,6 +64,7 @@ body {
     background-repeat  : no-repeat;
     background-size    : cover;
     background-position: center;
+    overflow: hidden;
 }
 
 /* LOGO */
@@ -143,7 +144,7 @@ h2 {
 
 .modal {
     position          : absolute;
-    top               : 10%;
+    top               : calc(50% - 600px / 2);
     left              : 50%;
     -webkit-transform : translate(-50%, 0%);
     -ms-transform     : translate(-50%, 0%);
@@ -151,7 +152,7 @@ h2 {
     background        : #F5F5F5;
     max-width         : 1080px;
     width             : 90%;
-    height            : 550px;
+    height            : 600px;
     padding           : 1em;
     z-index           : 1001;
     -webkit-transition: all 0.5s ease;
@@ -719,8 +720,8 @@ h4 {
 .lend_slider_item {
     width          : 100% !important;
     height         : 625px;
-    background     : rgba(25, 31, 39, 0.8);
-    backdrop-filter: blur(0.5px);
+    background     : #191F27;
+    
     margin         : 0 auto;
     border-radius  : 16px;
     border         : 1px solid #00AD9E;
@@ -825,6 +826,10 @@ h4 {
     color         : black;
 }
 
+#modal_3 iframe{
+    width: 100%;
+    height: 100%;
+}
 
 @media (max-width:430px) {
     .div-main {
